@@ -107,6 +107,8 @@ option('localed', type : 'boolean',
        description : 'install the systemd-localed stack')
 option('machined', type : 'boolean',
        description : 'install the systemd-machined stack')
+option('memhpd', type : 'boolean',
+       description : 'support for memory hotplug configuration daemon')
 option('portabled', type : 'boolean',
        description : 'install the systemd-portabled stack')
 option('userdb', type : 'boolean',

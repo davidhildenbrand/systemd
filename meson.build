@@ -1464,6 +1464,7 @@ foreach term : ['analyze',
                 'localed',
                 'logind',
                 'machined',
+                'memhpd',
                 'networkd',
                 'nss-myhostname',
                 'nss-systemd',
@@ -2842,6 +2843,17 @@ if conf.get('ENABLE_FIRSTBOOT') == 1
                 install_dir : rootbindir)
 endif
 
+if conf.get('ENABLE_MEMHPD') == 1
+        executable(
+                'systemd-memhpd',
+                'src/memhp/memhpd.c',
+                include_directories : includes,
+                link_with : [libshared],
+                install_rpath : rootlibexecdir,
+                install : true,
+                install_dir : rootlibexecdir)
+endif
+
 executable(
         'systemd-remount-fs',
         'src/remount-fs/remount-fs.c',
@@ -3781,6 +3793,7 @@ foreach tuple : [
         ['xdg-autostart'],
         ['logind'],
         ['machined'],
+        ['memhpd'],
         ['portabled'],
         ['userdb'],
         ['homed'],

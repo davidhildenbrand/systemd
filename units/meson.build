@@ -197,6 +197,8 @@ in_units = [
          'multi-user.target.wants/ dbus-org.freedesktop.login1.service'],
         ['systemd-machined.service',             'ENABLE_MACHINED',
          'dbus-org.freedesktop.machine1.service'],
+        ['systemd-memhpd.service',               'ENABLE_MEMHPD',
+         'sysinit.target.wants/'],
         ['systemd-modules-load.service',         'HAVE_KMOD',
          'sysinit.target.wants/'],
         ['systemd-network-generator.service',    'ENABLE_NETWORKD'],
